@@ -51,7 +51,8 @@ exports.getCoursesByTeacher = async (req, res) => {
 exports.createCourse = async (req, res) => {
   const { name, adminId } = req.body;
   try {
-    const newCourse = new Course({ name, adminId });
+    students = []
+    const newCourse = new Course({ name, adminId ,students});
     const savedCourse = await newCourse.save();
     console.log("created");
 
