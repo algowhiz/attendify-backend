@@ -57,6 +57,8 @@ exports.createCourse = async (req, res) => {
 
     res.status(201).json(savedCourse);
   } catch (err) {
+    console.log(err);
+    
     res.status(500).json({ message: 'Error creating course', error: err });
   }
 };
